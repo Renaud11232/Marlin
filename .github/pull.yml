@@ -1,0 +1,8 @@
+version: "1"
+rules:
+  - base: 2.0.x
+    upstream: MarlinFirmware:2.0.x
+    mergeMethod: hardreset
+  - base: 1.1.x
+    upstream: MarlinFirmware:1.1.x
+    mergeMethod: hardreset
