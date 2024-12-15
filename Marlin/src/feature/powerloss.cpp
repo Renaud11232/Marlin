@@ -31,7 +31,11 @@
 #include "powerloss.h"
 #include "../core/macros.h"
 
-bool PrintJobRecovery::enabled; // Initialized by settings.load()
+#if ENABLED(EXTENSIBLE_UI)
+  #include "../lcd/extui/ui_api.h"
+#endif
+
+bool PrintJobRecovery::enabled; // Initialized by settings.load
 
 MediaFile PrintJobRecovery::file;
 job_recovery_info_t PrintJobRecovery::info;
@@ -88,7 +92,7 @@ PrintJobRecovery recovery;
 /**
  * Clear the recovery info
  */
-void PrintJobRecovery::init() { memset(&info, 0, sizeof(info)); }
+void PrintJobRecovery::init() { info = {}; }
 
 /**
  * Enable or disable then call changed()
