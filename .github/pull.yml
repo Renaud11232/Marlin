@@ -1,14 +1,47 @@
 version: "1"
 rules:
-  - base: 2.1.x
-    upstream: MarlinFirmware:2.1.x
-    mergeMethod: hardreset
-  - base: 2.0.x
-    upstream: MarlinFirmware:2.0.x
+  - base: 1.0.x
+    upstream: MarlinFirmware:1.0.x
     mergeMethod: hardreset
   - base: 1.1.x
     upstream: MarlinFirmware:1.1.x
     mergeMethod: hardreset
-  - base: 1.0.x
-    upstream: MarlinFirmware:1.0.x
+  - base: lts-2.0.0
+    upstream: MarlinFirmware:lts-2.0.0
+    mergeMethod: hardreset
+  - base: lts-2.0.1
+    upstream: MarlinFirmware:lts-2.0.1
+    mergeMethod: hardreset
+  - base: lts-2.0.2
+    upstream: MarlinFirmware:lts-2.0.2
+    mergeMethod: hardreset
+  - base: lts-2.0.3
+    upstream: MarlinFirmware:lts-2.0.3
+    mergeMethod: hardreset
+  - base: lts-2.0.4
+    upstream: MarlinFirmware:lts-2.0.4
+    mergeMethod: hardreset
+  - base: lts-2.0.5
+    upstream: MarlinFirmware:lts-2.0.5
+    mergeMethod: hardreset
+  - base: lts-2.0.6
+    upstream: MarlinFirmware:lts-2.0.6
+    mergeMethod: hardreset
+  - base: lts-2.0.7
+    upstream: MarlinFirmware:lts-2.0.7
+    mergeMethod: hardreset
+  - base: lts-2.0.8
+    upstream: MarlinFirmware:lts-2.0.8
+    mergeMethod: hardreset
+  - base: lts-2.0.9
+    upstream: MarlinFirmware:lts-2.0.9
+    mergeMethod: hardreset
+  - base: lts-2.1.0
+    upstream: MarlinFirmware:lts-2.1.0
+    mergeMethod: hardreset
+  - base: lts-2.1.1
+    upstream: MarlinFirmware:lts-2.1.1
+    mergeMethod: hardreset
+  - base: lts-2.1.2
+    upstream: MarlinFirmware:lts-2.1.2
     mergeMethod: hardreset
