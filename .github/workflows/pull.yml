@@ -41,6 +41,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+    needs: branches
     steps:
       - uses: actions/checkout@v7
       - run: git remote add upstream https://github.com/MarlinFirmware/Marlin.git
