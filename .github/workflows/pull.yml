@@ -1,0 +1,48 @@
+name: Pull upstream changes
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 2 * * *"
+
+jobs:
+  branches:
+    name: Sync branches
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    strategy:
+      matrix:
+        branch:
+          - lts-2.1.2
+          - lts-2.1.1
+          - lts-2.1.0
+          - lts-2.0.9
+          - lts-2.0.8
+          - lts-2.0.7
+          - lts-2.0.6
+          - lts-2.0.5
+          - lts-2.0.4
+          - lts-2.0.3
+          - lts-2.0.2
+          - lts-2.0.1
+          - lts-2.0.0
+          - 1.1.x
+          - 1.0.x
+    steps:
+      - uses: actions/checkout@v7
+      - run: git remote add upstream https://github.com/MarlinFirmware/Marlin.git
+      - run: git fetch upstream
+      - run: git switch -c ${{ matrix.branch }} upstream/${{ matrix.branch }}
+      - run: git reset --hard upstream/${{ matrix.branch }}
+      - run: git push origin ${{ matrix.branch }} --force
+  tags:
+    name: Sync tags
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7
+      - run: git remote add upstream https://github.com/MarlinFirmware/Marlin.git
+      - run: git fetch upstream --tags --force
+      - run: git push origin --tags --force
