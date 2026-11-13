@@ -33,8 +33,7 @@ jobs:
       - uses: actions/checkout@v7
       - run: git remote add upstream https://github.com/MarlinFirmware/Marlin.git
       - run: git fetch upstream
-      - run: git switch -c ${{ matrix.branch }} upstream/${{ matrix.branch }}
-      - run: git reset --hard upstream/${{ matrix.branch }}
+      - run: git checkout -B ${{ matrix.branch }} upstream/${{ matrix.branch }}
       - run: git push origin ${{ matrix.branch }} --force
   tags:
     name: Sync tags
