@@ -1625,7 +1625,7 @@
    *  - The difference is used to set the probe Z offset.
    */
   #if ANY(HAS_MARLINUI_MENU, HAS_TFT_LVGL_UI)
-    //#define PROBE_OFFSET_WIZARD
+    #define PROBE_OFFSET_WIZARD
     #if ENABLED(PROBE_OFFSET_WIZARD)
       /**
        * Enable to init the Probe Z-Offset when starting the Wizard.
